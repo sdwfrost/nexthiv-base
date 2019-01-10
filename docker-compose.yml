@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  nexthiv-base:
+    build: .
+    image: sdwfrost/nexthiv-base
+    user: root
+    environment:
+        - GRANT_SUDO=yes
+        - NB_USER=jovyan
+    volumes:
+        - .:/home/jovyan/work
+    ports:
+        - 8888:8888
+    container_name: nexthiv-base-container
